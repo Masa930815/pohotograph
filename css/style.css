@@ -1,0 +1,85 @@
+@charset 'utf8';
+
+:root {
+    --text: #333;
+    --bg: #fff;
+    --video-opacity: .5;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: #000;
+        --video-opacity: .7;
+    }
+}
+body{
+    color: var(--text);
+    background: var(--bg);
+    font-family: 'Bree Serif' , sans-serif;
+    transition: .5s;
+    background: url(../images/p0520_m.jpg);
+}
+
+img{
+    max-width: 100%;
+}
+header{
+    position: relative;
+    margin-bottom: .5rem
+    ;
+}
+
+.header-text{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    text-align: center;
+    color: #ff0090;
+}
+
+.header-title{
+    font-size: 3rem;
+}
+
+.header-name{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+header video{
+  object-fit: cover;
+  object-position: center top;
+}
+
+.header-text,
+header video{
+  width: 100vw;
+  height: 100vh;
+}
+
+.gird{
+  display: grid;
+  width: 94vw;
+  margin: 0 auto 1vw;
+  gap: 2vw;
+  grid-template-columns: repeat(2,46vw);
+  grid-template-rows: repeat(8,46vw);
+}
+.grid-item{
+  width:470px;
+  height:350px;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+@midia (min-width:600px){
+  width: 80vw;
+  gap: 1vw;
+  grid-template-columns: repeat(3, 26vw); /* (80 - 2) / 3 */
+  grid-template-rows: repeat(5, 26vw);
+}
